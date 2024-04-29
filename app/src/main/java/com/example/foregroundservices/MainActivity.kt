@@ -59,6 +59,7 @@ class MainActivity : ComponentActivity() {
                         onClick = {
                             Intent(this@MainActivity, CounterService::class.java).also {
                                 it.action = CounterService.CounterAction.STOP.name
+                                //stopService(it) //Cause resources will not cleaned
                                 startService(it)
                             }
                         }
